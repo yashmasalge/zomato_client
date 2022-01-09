@@ -24,14 +24,15 @@ function Signup({ isOpen, setIsOpen }) {
 
   const submit = () => {
     disptach(signUp(userData));
-    setUserData({ fullName: "", email : "", password : ""});
+    setUserData({ fullName: "", email: "", password: "" });
     closeModal();
-  }
+  };
 
   const googleSignUp = () =>
-    (window.location.href = "http://localhost:5000/auth/google");
+    (window.location.href = "https://zomato-server.herokuapp.com/auth/google");
 
-  return <>
+  return (
+    <>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
@@ -129,6 +130,7 @@ function Signup({ isOpen, setIsOpen }) {
         </Dialog>
       </Transition>
     </>
+  );
 }
 
 export default Signup;

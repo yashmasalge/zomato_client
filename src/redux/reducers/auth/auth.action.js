@@ -6,13 +6,12 @@ import { SIGN_OUT, SIGN_IN, SIGN_UP, GOOGLE_AUTH } from "./auth.type";
 // redux actions
 import { clearUser } from "../user/user.action";
 
-
 // SIGN_IN
 export const signIn = (userData) => async (dispatch) => {
   try {
     const User = await axios({
       method: "POST",
-      url: `http://localhost:5000/auth/signin`,
+      url: `https://zomato-server.herokuapp.com/auth/signin`,
       data: { credentials: userData },
     });
 
@@ -29,13 +28,12 @@ export const signIn = (userData) => async (dispatch) => {
   }
 };
 
-
 // SIGN_UP
 export const signUp = (userData) => async (dispatch) => {
   try {
     const User = await axios({
       method: "POST",
-      url: `http://localhost:5000/auth/signup`,
+      url: `https://zomato-server.herokuapp.com/auth/signup`,
       data: { credentials: userData },
     });
 
@@ -52,7 +50,6 @@ export const signUp = (userData) => async (dispatch) => {
   }
 };
 
-
 // SIGN_OUT
 export const signOut = () => async (dispatch) => {
   try {
@@ -65,7 +62,6 @@ export const signOut = () => async (dispatch) => {
     return dispatch({ type: "ERROR", payload: error });
   }
 };
-
 
 // GOOGLE_AUTH
 export const googleAuth = (token) => async (dispatch) => {
