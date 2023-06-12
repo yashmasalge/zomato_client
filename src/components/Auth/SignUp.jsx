@@ -29,7 +29,8 @@ function Signup({ isOpen, setIsOpen }) {
   };
 
   const googleSignUp = () =>
-    (window.location.href = "https://zomatoserver.up.railway.app/auth/google");
+    (window.location.href =
+      "https://zomato-backend-eium.onrender.com/auth/google");
 
   return (
     <>

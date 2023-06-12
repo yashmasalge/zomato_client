@@ -7,7 +7,7 @@ export const getImage = (_id) => async (dispatch) => {
   try {
     const image = await axios({
       method: "GET",
-      url: `https://zomatoserver.up.railway.app/image/${_id}`,
+      url: `https://zomato-backend-eium.onrender.com/image/${_id}`,
     });
 
     return dispatch({ type: GET_IMAGE, payload: image.data });

@@ -7,7 +7,7 @@ export const getReviews = (resId) => async (dispatch) => {
   try {
     const reviewList = await axios({
       method: "GET",
-      url: `https://zomatoserver.up.railway.app/review/${resId}`,
+      url: `https://zomato-backend-eium.onrender.com/review/${resId}`,
     });
 
     return dispatch({ type: GET_REVIEW, payload: reviewList.data });
@@ -20,7 +20,7 @@ export const postReview = (reviewData) => async (dispatch) => {
   try {
     await axios({
       method: "POST",
-      url: `https://zomatoserver.up.railway.app/review/new`,
+      url: `https://zomato-backend-eium.onrender.com/review/new`,
       data: { reviewData },
     });
 

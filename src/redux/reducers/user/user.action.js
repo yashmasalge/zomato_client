@@ -7,7 +7,7 @@ export const getUser = (_id) => async (dispatch) => {
   try {
     const User = await axios({
       method: "GET",
-      url: `https://zomatoserver.up.railway.app/user/${_id}`,
+      url: `https://zomato-backend-eium.onrender.com/user/${_id}`,
     });
 
     return dispatch({ type: GET_USER, payload: User.data });
@@ -20,7 +20,7 @@ export const getMySelf = () => async (dispatch) => {
   try {
     const User = await axios({
       method: "GET",
-      url: `https://zomatoserver.up.railway.app/user/`,
+      url: `https://zomato-backend-eium.onrender.com/user/`,
     });
 
     return dispatch({ type: SELF, payload: User.data });
